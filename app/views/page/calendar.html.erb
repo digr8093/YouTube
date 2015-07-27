@@ -1,0 +1,24 @@
+<h1>Calendar</h1>
+
+
+    <%= @time.year %> <%= @time.strftime("%B")%>
+
+
+HIIIIIII
+<a href='www.lauren.mn'>Email Me 1</a><br/>
+
+#print day of the week
+<%= day_of_week = @time.strftime("%w").to_i%>
+
+
+
+
+<a href="mailto:lauren@lauren.mn">Email Me 1</a><br/>
+<%= mail_to("lauren@lauren.mn", "Email Me") %>
+
+
+<!-- Display calendar -->
+<%= calendar(@month, @year).html_safe %>
+
+
+
