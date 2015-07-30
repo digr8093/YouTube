@@ -1,21 +1,13 @@
 Rails.application.routes.draw do
-  get 'page/Home'
-
-  get 'page/about_us'
-
-  get 'page/contact_us'
-
-  get 'page/products'
-
-  get 'page/newsletter'
-
-  get 'page/blog'
-
-  get 'page/calendar(/:year(/:month) )' => 'page#calendar', :as =>'calendar'
-
-  get 'page/articles'
-
-  get 'page/login'
+  get 'home'        => "page#Home"
+  get 'about_us'    => "page#about_us"
+  get 'contact_us'  => 'page#contact_us'
+  get 'products'    => 'page#products'
+  get 'newsletter'  => 'page#newsletter'
+  get 'blog'        => 'page#blog'
+  get 'calendar(/:year(/:month) )' => 'page#calendar', :as =>'calendar'
+  get 'articles'    => 'page#articles'
+  get 'login'       => 'page#login'
 
   get 'dave/teach'
 

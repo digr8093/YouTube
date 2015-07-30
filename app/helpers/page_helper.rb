@@ -66,7 +66,6 @@ module PageHelper
 
 
     cal += "</tr></table>"
-
     cal += "Month: #{month} <br/>"
     cal += "<br/>Year: #{year}"
     cal += "<br/>Date: #{current_date}"
