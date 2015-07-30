@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   match 'contact_us' => 'page#contact_us', :via => [:post, :get]
 
-  get 'products'    => 'page#products'
+  #get 'products'    => 'page#products'
   get 'newsletter'  => 'page#newsletter'
   get 'blog'        => 'page#blog'
   get 'calendar(/:year(/:month) )' => 'page#calendar', :as =>'calendar'
