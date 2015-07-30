@@ -1,19 +1,51 @@
 <h1>Contact Us</h1>
 
+<h2>Your Name is: <%=@name%></h2><br/>
+<h2>Your email is: <%=@email%></h2>
+
+<pre>
+<% params.each do |key, value| %>
+    <%= key + ' ==> ' + value + '\n' %>
+    <% end %>
+</pre>
+
+<br/>
 
 
+<% if !@submitted || @form_error %>
+    <%=@error_message%>
+    <%= form_for contact_us_path, :method => "POST" do %>
+
+        <%= label_tag :name, "Enter your full name: "%><br/>
+        <%= text_field_tag :name, @name, :placeholder => "Enter your name", :focus => 'autofocus' %><br/>
 
 
-<%= form_for contact_us_path, :method => "POST" do %>
-    <%= text_field_tag :name %>
+        <%= label_tag :email, "Enter your email: "%><br/>
+        <%= email_field_tag :email, @email, :placeholder =>'Enter your email' %><br/>
 
-    <%= submit_tag "Ask Question" %>
+        <%= submit_tag "Ask Question" %><br/>
+        <%= text_area_tag :question, @question, :size => '19X15', :placeholder => 'Enter your question'%>
+        <br/>Subscribe to my newletter? &nbsp
+        <%= check_box_tag :newsletter, 'newsletter', @newsletter %>
 
+        <br/>
+        <%= radio_button_tag :gender, 'male', @male %>Male<br/>
+        <%= radio_button_tag :gender, 'female', @female %>Female</br>
 
+        <select>
+          <option>Call Today</option>
+          <option>Call Tomorrow</option>
+        </select>
+
+        <br/>
+        <%=select_tag :product, options_for_select( [ [ 'Today', 1], ['Tomorrow', 2] ], @product) %>
+
+        <% end %>
+    <% else %>
+        Thanks for your submission.
 
 
 
 <% end %>
 
 
-AFTER FORM
