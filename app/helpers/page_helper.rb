@@ -5,7 +5,8 @@ module PageHelper
     current_date  = Date.new(year, month, 1)
     day_of_week   = current_date.strftime("%w").to_i
 
-    cal   = "<table border='1'><tr>"
+    cal = current_date.strftime("%B")
+    cal   += "<br/><table border='1'><tr>"
     days  = %w( Sun Mon Tues Weds Thu Fri Sat)
 
 
@@ -26,6 +27,8 @@ module PageHelper
   #draw calendar - last row
 
     # look at Date class, figure out how many days in a month, get last day and minus one
+
+
 
     (7 - day_of_week).times do |day|
       cal += "<td>#{day +1}</td>"

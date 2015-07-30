@@ -19,34 +19,44 @@
 
     <%= stylesheet_link_tag "application", :media => "all" %>
 
-
-
-
-
     <%= javascript_include_tag "application" %>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   </head>
+
   <body>
 
   <div class="bg">
+
     <!--start container-->
     <div id="container">
+
       <!--start header-->
       <header>
-
+        <li><a href="#">Contact</a></li>
+        <%= link_to "Test Link", page_Home_path%>
         <!--start menu-->
-        <nav>
-          <ul>
-            <li><a href="#" class="current">Home</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Portfolio</a></li>
-            <li><a href="#">News</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </nav>
+        <%= render '/shared/nav' %>
         <!--end menu-->
+
+
+
         <!--end header-->
       </header>
 
@@ -108,7 +118,7 @@
 
 
 
-          <%= bootstrap_flash %>
+    <%= bootstrap_flash %>
           <%= yield %>
 
 

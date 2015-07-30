@@ -19,8 +19,8 @@ class PageController < ApplicationController
 
   def calendar
     @time = Time.now
-    @month = 7
-    @year = 2015
+    @month = params['month'].to_i
+    @year = params['year'].to_i
 
   end
 
