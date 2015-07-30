@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   get 'page/blog'
 
-  get 'page/calendar'
+  get 'page/calendar(/:year(/:month) )' => 'page#calendar', :as =>'calendar'
 
   get 'page/articles'
 
