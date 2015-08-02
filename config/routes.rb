@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
-  resources :products
+  #resources :products
+
+  resources :products do
+    get 'page/:page', :action => :index, :on => :collection
+  end
+
+
+
   get 'home'        => "page#Home"
   get 'about_us'    => "page#about_us"
 

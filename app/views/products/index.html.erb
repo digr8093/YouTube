@@ -1,8 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Products</h1>
-<%= link_to "Previous", products_path(:page=>@prev_page) %>
-<%= link_to "Next", products_path(:page=>@next_page) %>
+<%= paginate @products %>
+<%#= link_to "Previous", products_path(:page=>@prev_page) %>
+<%#= link_to "Next", products_path(:page=>@next_page) %>
 <table>
   <thead>
     <tr>

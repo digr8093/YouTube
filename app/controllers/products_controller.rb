@@ -4,10 +4,10 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @page = params['page'].to_i
-    @products = Product.limit(5).offset(@page*5)
-    @prev_page = @page -1 unless @page == 0
-    @next_page = @page +1 unless @page*5 > Product.count
+    @page = params['page']
+    @products = Product.page(@page).order(:updated_at=>:desc)
+    #@prev_page = @page -1 unless @page == 0
+    #@next_page = @page +1 unless @page*5 > Product.count
   end
 
   # GET /products/1
