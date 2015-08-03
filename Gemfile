@@ -42,6 +42,7 @@ gem 'less-rails' #Sprockets (what rails 3.1 uses for its  asset pipeline support
 gem 'linguistics'
 gem 'faker'
 gem 'kaminari'
+gem 'devise'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

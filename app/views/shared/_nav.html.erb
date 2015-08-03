@@ -11,7 +11,16 @@
     <li><%=  nav_link_to  "Products", "products", products_path %></li>
     <li><%=  nav_link_to  "Newsletter", "newsletter", newsletter_path %></li>
 
+    <% if user_signed_in? %>
 
+    <li><%=  link_to "Logout", destroy_user_session_path, :method => :delete %></li>
+
+
+
+    <% else %>
+        <li><%=  nav_link_to  "Login", "login", new_user_session_path %></li>
+
+    <%end %>
 
   </ul>
 </nav>
