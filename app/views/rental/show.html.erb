@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @product.proper_name%>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @product.price %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @product.description %>
+</p>
+
+<p>
+  <strong>Cost:</strong>
+  <%= @product.cost %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @product.quantity %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @product.image %>
+</p>
+
+
+
+<p>
+  <strong>Thumbnail:</strong>
+  <%= image_tag @product.thumbnail %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @product.comment %>
+</p>
+
+
+<%= link_to 'Back', rental_index_path %>
+
+

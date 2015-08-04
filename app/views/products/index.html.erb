@@ -26,21 +26,25 @@
         <td><%= product.price %></td>
         <td><%= truncate(product.description.html_safe, :length=>20 )%></td>
         <td><%= product.cost %></td>
-        <td><%= product.quantity %></td>
-        <td><%= image_tag product.image %></td>
-        <td><%= link_to (image_tag( product.thumbnail) ), product_path(product) %></td>
-        <td><%= link_to 'Show', product %></td>
+<td><%= product.quantity %></td>
+<td><%= image_tag product.image %></td>
+<td><%= link_to (image_tag( product.thumbnail) ), product_path(product) %></td>
+<td><%= link_to 'Show', product %></td>
 
-        <% if current_user.try(:admin?) %>
+<% if current_user.try(:admin?) %>
 
-            <td><%= link_to 'Edit', edit_product_path(product) %></td>
-            <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      <%end%>
-            </tr>
-    <% end %>
-  </tbody>
+    <td><%= link_to 'Edit', edit_product_path(product) %></td>
+    <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<%end%>
+</tr>
+<% end %>
+</tbody>
 </table>
 
 <br>
 
 <%= link_to 'New Product', new_product_path %>
+
+<% if user_signed_in? %>
+    Welcome, <%= current_user.full_name %> <br/>
+<%end%>
