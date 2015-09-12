@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'credit_card/pay'
+
+  get 'credit_card/return'
+
+  get 'credit_card/turnOff'
+
+  get 'credit_card/turnOn'
+
   get 'rental/index'
 
   get 'rental/show/:id' =>"rental#show", :as => 'rental_show'

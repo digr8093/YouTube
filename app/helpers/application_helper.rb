@@ -6,4 +6,8 @@ module ApplicationHelper
 
 
   end
+
+  def isAdmin?
+    return current_user.try(:admin?)
+  end
 end

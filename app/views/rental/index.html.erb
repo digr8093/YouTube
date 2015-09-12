@@ -1,6 +1,5 @@
 
 
-
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Products</h1>
@@ -43,4 +42,11 @@
 
 <% if user_signed_in? %>
     Welcome, <%= current_user.full_name %> <br/>
+    hahah
+    hahah
 <%end%>
+
+<% isAdmin? %>
+<% if isAdmin? %>
+    <H1>IMMA ADMIN</H1>
+<% end%>

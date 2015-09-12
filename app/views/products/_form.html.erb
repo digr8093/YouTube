@@ -1,3 +1,6 @@
+<%= tinymce_assets %>
+<%= tinymce %>
+
 <%= form_for(@product) do |f| %>
   <% if @product.errors.any? %>
     <div id="error_explanation">
@@ -21,7 +24,7 @@
   </div>
   <div class="field">
     <%= f.label :description %><br>
-    <%= f.text_field :description %>
+    <%= f.text_field :description, :class =>"tinymce" %>
   </div>
   <div class="field">
     <%= f.label :cost %><br>
@@ -46,8 +49,13 @@
       <%= f.text_field :thumbnail %>
     </div>
 
+    <div >
+      <%= text_area_tag :content, "", :class => "tinymce", :rows => 40, :cols => 120 %>
+
+    </div>
 
     <div class="actions">
+
   <%= f.submit %>
 </div>
 <% end %>
